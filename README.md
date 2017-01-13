@@ -1,5 +1,8 @@
 #Inthe.AM Calendar Sync
 
+##What does it do?
+This script gets around a longstanding bug in how Google Calendar handles importing iCal feeds. Instead of relying on that functionality, inthe.am users can use this script that bypasses the issue and gets new events from your task list onto your calendar almost instantly.
+
 ##Installation Instructions
 
 1. Download the zip file, extract to same folder.
