@@ -1,0 +1,185 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    // Python Configuration
+
+    // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
+    "python.pythonPath": "python3",
+
+    // Path to directory containing the Jedi library (this path will contain the 'Jedi' sub directory).
+    "python.jediPath": "",
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.sortImports.args": [],
+
+    // Whether to lint Python files.
+    "python.linting.enabled": true,
+
+    // Whether to lint Python files using prospector.
+    "python.linting.prospectorEnabled": false,
+
+    // Whether to lint Python files using pylint.
+    "python.linting.pylintEnabled": true,
+
+    // Whether to lint Python files using pep8
+    "python.linting.pep8Enabled": false,
+
+    // Whether to lint Python files using flake8
+    "python.linting.flake8Enabled": false,
+
+    // Whether to lint Python files using pydocstyle
+    "python.linting.pydocstyleEnabled": false,
+
+    // Whether to lint Python files using mypy.
+    "python.linting.mypyEnabled": false,
+
+    // Whether to lint Python files when modified.
+    "python.linting.lintOnTextChange": true,
+
+    // Whether to lint Python files when saved.
+    "python.linting.lintOnSave": true,
+
+    // Controls the maximum number of problems produced by the server.
+    "python.linting.maxNumberOfProblems": 100,
+
+    // Severity of Pylint message type 'Convention/C'.
+    "python.linting.pylintCategorySeverity.convention": "Information",
+
+    // Severity of Pylint message type 'Refactor/R'.
+    "python.linting.pylintCategorySeverity.refactor": "Hint",
+
+    // Severity of Pylint message type 'Warning/W'.
+    "python.linting.pylintCategorySeverity.warning": "Warning",
+
+    // Severity of Pylint message type 'Error/E'.
+    "python.linting.pylintCategorySeverity.error": "Error",
+
+    // Severity of Pylint message type 'Fatal/F'.
+    "python.linting.pylintCategorySeverity.fatal": "Error",
+
+    // Path to Prospector, you can use a custom version of prospector by modifying this setting to include the full path.
+    "python.linting.prospectorPath": "prospector",
+
+    // Path to Pylint, you can use a custom version of pylint by modifying this setting to include the full path.
+    "python.linting.pylintPath": "pylint",
+
+    // Path to pep8, you can use a custom version of pep8 by modifying this setting to include the full path.
+    "python.linting.pep8Path": "pep8",
+
+    // Path to flake8, you can use a custom version of flake8 by modifying this setting to include the full path.
+    "python.linting.flake8Path": "flake8",
+
+    // Path to pydocstyle, you can use a custom version of pydocstyle by modifying this setting to include the full path.
+    "python.linting.pydocstylePath": "pydocstyle",
+
+    // Path to mypy, you can use a custom version of mypy by modifying this setting to include the full path.
+    "python.linting.mypyPath": "mypy",
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.prospectorArgs": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.pylintArgs": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.pep8Args": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.flake8Args": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.pydocstyleArgs": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.mypyArgs": [],
+
+    // The output window name for the linting messages, defaults to Python output window.
+    "python.linting.outputWindow": "Python",
+
+    // Provider for formatting. Possible options include 'autopep8' and 'yapf'.
+    "python.formatting.provider": "autopep8",
+
+    // Path to autopep8, you can use a custom version of autopep8 by modifying this setting to include the full path.
+    "python.formatting.autopep8Path": "autopep8",
+
+    // Path to yapf, you can use a custom version of yapf by modifying this setting to include the full path.
+    "python.formatting.yapfPath": "yapf",
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.formatting.autopep8Args": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.formatting.yapfArgs": [],
+
+    // Format the document upon saving.
+    "python.formatting.formatOnSave": false,
+
+    // The output window name for the formatting messages, defaults to Python output window.
+    "python.formatting.outputWindow": "Python",
+
+    // List of paths to libraries and the like that need to be imported by auto complete engine. E.g. when using Google App SDK, the paths are not in system path, hence need to be added into this list.
+    "python.autoComplete.extraPaths": [],
+
+    // Where to prompt to configure a test framework if potential tests directories are discovered.
+    "python.unitTest.promptToConfigure": true,
+
+    // Whether to enable or disable unit testing using nosetests.
+    "python.unitTest.nosetestsEnabled": false,
+
+    // Path to nosetests, you can use a custom version of nosetests by modifying this setting to include the full path.
+    "python.unitTest.nosetestPath": "nosetests",
+
+    // Whether to enable or disable unit testing using pytest.
+    "python.unitTest.pyTestEnabled": false,
+
+    // Path to pytest (py.test), you can use a custom version of pytest by modifying this setting to include the full path.
+    "python.unitTest.pyTestPath": "py.test",
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.unitTest.nosetestArgs": [],
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.unitTest.pyTestArgs": [],
+
+    // Whether to enable or disable unit testing using unittest.
+    "python.unitTest.unittestEnabled": false,
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test*.py"
+    ],
+
+    // Whether to lint Python files using pylama.
+    "python.linting.pylamaEnabled": false,
+
+    // Path to pylama, you can use a custom version of pylama by modifying this setting to include the full path.
+    "python.linting.pylamaPath": "pylama",
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.pylamaArgs": [],
+
+    // The output window name for the unit test messages, defaults to Python output window.
+    "python.unitTest.outputWindow": "Python Test Log",
+
+    // When executing a file in the terminal, whether to use execute in the file's directory, instead of the current open folder.
+    "python.terminal.executeInFileDir": false,
+
+    // Python launch arguments to use when executing a file in the terminal.
+    "python.terminal.launchArgs": [],
+
+    // Whether to appen the results to results window, else clear and display.
+    "python.jupyter.appendResults": true,
+
+    // Default kernel to be used. By default the first available kernel is used.
+    "python.jupyter.defaultKernel": "",
+
+    // Code executed when the kernel starts. Such as the default of '%matplotlib inline'. Individual lines can be placed in separate items of the array.
+    "python.jupyter.startupCode": [
+        "%matplotlib inline"
+    ]
+
+
+}
