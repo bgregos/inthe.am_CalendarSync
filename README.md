@@ -1,4 +1,4 @@
-#Inthe.AM Calendar Sync
+#Inthe.am Calendar Sync
 
 ##What does it do?
 This script syncs your events from inthe.am to Google Calendar.
