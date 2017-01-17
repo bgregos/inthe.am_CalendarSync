@@ -94,8 +94,11 @@ def main():
     global CAL_ID
     CAL_ID = config.get('Settings', 'calendar id')
     timezone = config.get('Settings', 'time zone')
-    prior_day = config.getboolean('Settings', 'show due on prior day')
+    #day_ends: items after this time will show as due on this day. Items due before this
+    #time will be shown as due on the day before
+    day_ends = config.get('Settings', 'day ends')
     tasklist = parse_tasks(api_key)
+    prior_day = False #remove later
     print('Tasks recieved from inthe.am. Uploading to Calendar...')
     page_token = None
     callist = SERVICE.events().list(
@@ -106,7 +109,7 @@ def main():
     for desc, time in tasklist.items(): #Prevents duplicating events
         nameflag = False #becomes true if another event shares the name
         dueflag = False
-        date = fix_date(time, timezone)
+        date = fix_date(time, timezone, day_ends)
         if prior_day:
             date = decrement_day(date)
         for event in callist['items']:
@@ -123,7 +126,7 @@ def main():
     for event in callist['items']: #deletes removed events
         hit = True
         for desc, time in tasklist.items():
-            due = fix_date(time, timezone)
+            due = fix_date(time, timezone, day_ends)
             if prior_day:
                 due = decrement_day(due)
             nameflag = False
@@ -159,7 +162,7 @@ def create_event(description, date):
     }
     event = SERVICE.events().insert(calendarId=CAL_ID, body=event).execute()
 
-def fix_date(time, timezone):
+def fix_date(time, timezone, day_ends):
     """
     This turns what inTheAM returns as the due time into a date adjusted
     for time zones, daylight savings, etc.
@@ -172,9 +175,17 @@ def fix_date(time, timezone):
     time_format = '%Y-%m-%dT%H:%M:%SZ%Z'
     dtime = datetime.strptime(due, time_format)
     dtime = pytz.utc.localize(dtime)
-    converted_time = dtime.astimezone(pytz.timezone(timezone))
-    start_date = converted_time.isoformat().split(' ')[0]
+    converted_due = dtime.astimezone(pytz.timezone(timezone))
+    start_date = converted_due.isoformat().split(' ')[0]
     start_date = start_date.split('T')[0] #the two splits get us only the date
+    if not day_ends == '24:00':
+        time_format = '%H:%M'
+        day_ends_time = datetime.strptime(day_ends, time_format)
+        if day_ends_time.hour > converted_due.hour:
+            return decrement_day(start_date)
+        elif (day_ends_time.hour == converted_due.hour and
+                day_ends_time.minute >= converted_due.minute):
+            return decrement_day(start_date)
     return start_date
 
 def decrement_day(time):
