@@ -38,3 +38,6 @@ Before you begin: you may wish to run this script with cron (or similar) on a he
 6. Run the program every time you want to sync. You can do this automatically at set intervals with cron, as well. I'm sure the author of inthe.am would prefer you don't set the sync interval too high, however. 
 
 Other info regarding sync frequency: For Google Calendar, there's a maximum of 1 million API calls/day. Each sync uses at least one API call, and an additional one for every event added or deleted. At this point, moves count as two calls. If you have really huge task lists or use one Google API key for lots of people, you may run into the the limit there. 
+
+#Upgrading
+New versions come out from time to time, and if you decide to upgrade, make sure you replace all files, including the config file. The configuration format/items may have changed between versions. Keep your old config around, and fill the new one in with information from the old config, where applicable.
