@@ -20,13 +20,8 @@ Before you begin: you may wish to run this script with cron (or similar) on a he
 3. Configure the program. Open intheAMsync.conf with your favorite  text editor. I'll explain the fields:
 	* inthe.am API key: Your key obtained from inthe.am settings. Just copy/paste it in.
 	* calendar id: You need to make a new calendar to sync events into. In the calendar settings for this new calendar, there should be a field that looks like <random letters/numbers>@group.calendar.google.com. Copy this in.
-<<<<<<< HEAD
 	* time zone: This should be primary time zone you are in. Match this to the settings for your calendar as well. Example: America/New_York.
 	* day ends: Express this as a 24-hour time, like 23:30. Tasks due before this time show up as due the day before. If you want tasks to always show up on they day they're due, put 24:00 as the time. If you want all tasks to show up the day before they're due, put in 00:00. Example: My day ends at 23:00, and today is Thursday. A task due at 23:45 would show as being due Thursday, while a task due at 11:00 would show as being due Wednesday. This feature is helpful for those who always want to have everything done without worrying when in the day a task is due. 
-=======
-	* time zone: this should be primary time zone you are in. Match this to the settings for your calendar as well. Example: America/New_York.
-	* show due on prior day: if you put in True, you dates will show up on as due on the day before they're due in taskwarrior. This makes sense to some workflows, and no sense whatsoever to others. Set this to False if you're not impressed.
->>>>>>> 1404a194315e51dff3f6f7d927d79ef100d72e7f
 
 4. Lastly, before you can run the program, you need your own Google Calendar API credentials, since you're running this yourself. 
 	1. Go to console.developers.google.com. 
