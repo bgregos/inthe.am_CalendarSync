@@ -195,7 +195,7 @@ def decrement_day(time):
     """
     date = time.split('-')
     date[2] = str(int(date[2]) - 1).zfill(2)
-    if date[2] == '0':
+    if date[2] == '00':
         if date[1] == '1':
             date[0] = str(int(date[0])-1).zfill(4)
             date[1] = '12'
@@ -223,19 +223,19 @@ def increment_day(day):
     date = day.split("-")
     date[2] = str(int(date[2]) + 1) #increment day
     #perform normal month checks
-    if ((date[2] == '31' and date[1] in {4, 6, 9, 11}) or
-            (date[2] == 32 and date[1] in {1, 3, 5, 7, 8, 10, 12})):
+    if ((date[2] == '31' and int(date[1]) in {4, 6, 9, 11}) or
+            (date[2] == '32' and int(date[1]) in {1, 3, 5, 7, 8, 10, 12})):
         date[2] = '1'
         date[1] = str(int(date[1])+1)
     #Roll over year if neccessary
     if date[1] == '13':
-        date[1] = '1'
+        date[1] = '01'
         date[0] = str(int(date[0])+1)
     #Handle February, including leap year
-    if ((calendar.isleap and date[1] == '2' and date[2] == '29') or
-            (not calendar.isleap and date[1] == '2' and date[2] == '28')):
-        date[1] = '3'
-        date[2] = '1'
+    if ((calendar.isleap and date[1] == '02' and date[2] == '30') or
+            (not calendar.isleap and date[1] == '02' and date[2] == '29')):
+        date[1] = '03'
+        date[2] = '01'
     #return incremented date
     return date[0]+'-'+date[1]+'-'+date[2]
 
