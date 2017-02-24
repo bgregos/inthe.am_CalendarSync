@@ -208,8 +208,8 @@ def decrement_day(time):
                 date[2] = '31'
                 date[1] = str(int(date[1])-1).zfill(2)
             elif int(date[1])-1 == 2:
-                date[1] = '1'
-                if calendar.isleap:
+                date[1] = '02'
+                if calendar.isleap(int(date[0])):
                     date[2] = '29'
                 else:
                     date[2] = '28'
@@ -232,8 +232,8 @@ def increment_day(day):
         date[1] = '01'
         date[0] = str(int(date[0])+1)
     #Handle February, including leap year
-    if ((calendar.isleap and date[1] == '02' and date[2] == '30') or
-            (not calendar.isleap and date[1] == '02' and date[2] == '29')):
+    if ((calendar.isleap(int(date[0])) and date[1] == '02' and date[2] == '30') or
+            (date[1] == '02' and date[2] == '29')):
         date[1] = '03'
         date[2] = '01'
     #return incremented date
