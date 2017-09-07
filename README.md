@@ -1,16 +1,16 @@
-#Inthe.am Calendar Sync
+# Inthe.am Calendar Sync
 
-##What does it do?
+## What does it do?
 This script syncs your events from inthe.am to Google Calendar.
 
 Inthe.am has iCal feed support, but Google Calendar has a long-standing bug making iCal syncs take up to several days. Instead of relying on that functionality, inthe.am users can use this script that bypasses the issue and gets new events from your task list onto your calendar almost instantly via the Google Calendar API.
 
-##Usage
+## Usage
 This program doesn't take any command line arguments, but it does have a config file. Config file information is in the Installation subheading. 
 
 Running the program runs a sync from your inthe.am account to Google Calendar. There isn't any background worker functionality built in, so if you want it to run contiunously, use a task scheduler like cron.
 
-##Installation Instructions
+## Installation Instructions
 Before you begin: you may wish to run this script with cron (or similar) on a headless server. You'll need to start these steps on a machine with a modern GUI web browser first. Info on what to do for headless servers is provided later on in the setup.
 
 1. Download this repository as a zip file and extract or clone to somewhere on your hard drive.
@@ -39,5 +39,5 @@ Before you begin: you may wish to run this script with cron (or similar) on a he
 
 Other info regarding sync frequency: For Google Calendar, there's a maximum of 1 million API calls/day. Each sync uses at least one API call, and an additional one for every event added or deleted. At this point, moves count as two calls. If you have really huge task lists or use one Google API key for lots of people, you may run into the the limit there. 
 
-##Upgrading
+## Upgrading
 New versions come out from time to time, and if you decide to upgrade, make sure you replace all files, including the config file. The configuration format/items may have changed between versions. Keep your old config around, and fill the new one in with information from the old config, where applicable.
