@@ -10,6 +10,8 @@ This program doesn't take any command line arguments, but it does have a config 
 
 Running the program runs a sync from your inthe.am account to Google Calendar. There isn't any background worker functionality built in, so if you want it to run contiunously, use a task scheduler like cron.
 
+You can run the program with ``./intheAMsync.py``.
+
 ## Installation Instructions
 Before you begin: you may wish to run this script with cron (or similar) on a headless server. You'll need to start these steps on a machine with a modern GUI web browser first. Info on what to do for headless servers is provided later on in the setup.
 
